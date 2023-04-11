@@ -2,24 +2,17 @@
  * @Author: ����
  * @Date: 2020-04-10 09:47:04
  * @LastEditors: 睦疏
- * @LastEditTime: 2023-04-03 08:34:41
- * @FilePath: \Sample\User\OLED\oled.h
+ * @LastEditTime: 2023-04-10 21:48:46
+ * @FilePath: \Truning-Master(UCOSII)\Stm32F103c8t6UCOSII\USER\OLED\oled.h
  * @Description:
  *
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved.
  */
 
-
-
-
-
-
-
-
 #ifndef __OLED_H
 #define __OLED_H
 
-//#include "sys.h"
+// #include "sys.h"
 #include "stdlib.h"
 #include "stm32f10x_gpio.h"
 #include "stm32f10x_rcc.h"
@@ -38,8 +31,8 @@
 #define OLED_CMD 0  // д����
 #define OLED_DATA 1 // д����
 
-#define DELAY_TIME 100   // 延迟时间（ms）
-#define SCROLL_SPEED 1   // 滚动速度，每次滚动的像素数
+#define DELAY_TIME 100 // 延迟时间（ms）
+#define SCROLL_SPEED 1 // 滚动速度，每次滚动的像素数
 
 void OLED_ClearPoint(u8 x, u8 y);
 void OLED_ColorTurn(u8 i);
@@ -63,7 +56,7 @@ void OLED_ShowNum(u8 x, u8 y, u32 num, u8 len, u8 size1, u8 mode);
 void OLED_ShowChinese(u8 x, u8 y, u8 num, u8 size1, u8 mode);
 void OLED_ScrollDisplay(u8 num, u8 space, u8 mode);
 void OLED_ShowPicture(u8 x, u8 y, u8 sizex, u8 sizey, u8 BMP[], u8 mode);
-void OLED_ScrollDisplayPicture(u8 width, u8 height, u8 BMP[]);
+void OLED_ScrollDisplayPicture(u8 BMP[], u8 space, u8 mode);
 void OLED_Init(void);
 
 #endif

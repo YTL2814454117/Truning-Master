@@ -2,8 +2,8 @@
  * @Author: 睦疏
  * @Date: 2023-04-02 10:30:04
  * @LastEditors: 睦疏
- * @LastEditTime: 2023-04-03 08:38:12
- * @FilePath: \Sample\User\OLED\oled.c
+ * @LastEditTime: 2023-04-11 10:32:21
+ * @FilePath: \Truning-Master(UCOSII)\Stm32F103c8t6UCOSII\USER\OLED\oled.c
  * @Description:
  *
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved.
@@ -514,18 +514,26 @@ void OLED_ShowPicture(u8 x, u8 y, u8 sizex, u8 sizey, u8 BMP[], u8 mode)
 	}
 }
 
-void OLED_ScrollDisplayPicture(u8 width, u8 height, u8 BMP[])
+void OLED_ScrollDisplayPicture(u8 BMP[], u8 space, u8 mode)
 {
-	uint16_t i, j;
-	OLED_Clear(); // 清屏
+
+	u8 t = 0;
 	// 实现图片滚动效果
 	while (1)
 	{
-		for (i = 0; i < width; i += SCROLL_SPEED)
+		u8 r, i, n;
+		OLED_ShowPicture(0, 0, 128, 32, BMP, 1); // 写入一张图片保存在OLED_GRAM[][]数组中
+		for (r = 0; r < 16 * space; r++)		 // 显示间隔
 		{
-			OLED_ShowPicture(0, 0, width - i, height, &BMP[i * height / 8], 1); // 显示滚动后的图片
-			delay_ms(DELAY_TIME);												// 等待一段时间，使图片滚动效果可见
-			OLED_Clear();														// 清屏
+			for (i = 1; i < 144; i++)
+			{
+				for (n = 0; n < 4; n++)
+				{
+					OLED_GRAM[i - 1][n] = OLED_GRAM[i][n];
+					OLED_GRAM[143][1] = OLED_GRAM[0][1];
+				}
+			}
+			OLED_Refresh();
 		}
 	}
 }

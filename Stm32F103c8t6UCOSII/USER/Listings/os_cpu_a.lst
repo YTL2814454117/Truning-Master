@@ -317,11 +317,11 @@ ARM Macro Assembler    Page 5
               00000000 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
-ork --depend=..\obj\os_cpu_a.d -o..\obj\os_cpu_a.o -ID:\HG\Code\Stm32f103c8t6UC
-OSII\USER\RTE -ID:\keilMDK\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include -ID
-:\keilMDK\ARM\CMSIS\Include --predefine="__MICROLIB SETA 1" --predefine="__UVIS
-ION_VERSION SETA 518" --predefine="STM32F10X_HD SETA 1" --list=.\listings\os_cp
-u_a.lst ..\UCOSII\PORT\os_cpu_a.asm
+ork --depend=..\obj\os_cpu_a.d -o..\obj\os_cpu_a.o -ID:\HG\Code\Truning-Master(
+UCOSII)\Stm32F103c8t6UCOSII\USER\RTE -ID:\keilMDK\ARM\PACK\Keil\STM32F1xx_DFP\2
+.4.0\Device\Include -ID:\keilMDK\ARM\CMSIS\Include --predefine="__MICROLIB SETA
+ 1" --predefine="__UVISION_VERSION SETA 518" --predefine="STM32F10X_HD SETA 1" 
+--list=.\listings\os_cpu_a.lst ..\UCOSII\PORT\os_cpu_a.asm
 
 
 

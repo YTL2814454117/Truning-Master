@@ -2,8 +2,8 @@
  * @Author: ƒ¿ Ë
  * @Date: 2022-01-15 15:17:29
  * @LastEditors: ƒ¿ Ë
- * @LastEditTime: 2023-04-09 20:22:08
- * @FilePath: \Stm32f103c8t6UCOSII\USER\main.c
+ * @LastEditTime: 2023-04-10 21:51:03
+ * @FilePath: \Truning-Master(UCOSII)\Stm32F103c8t6UCOSII\USER\main.c
  * @Description:
  *
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved.
@@ -88,8 +88,6 @@ void Oled_task(void *pdata)
 {
 	while (1)
 	{
-		OLED_Refresh();
-		OLED_ScrollDisplay(16, 4, 1);
-		OLED_Refresh();
+		OLED_ScrollDisplayPicture(BMP0, 4, 1);
 	};
 }

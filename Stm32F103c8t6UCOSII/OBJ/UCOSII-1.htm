@@ -3,7 +3,7 @@
 <title>Static Call Graph - [..\OBJ\UCOSII-1.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\OBJ\UCOSII-1.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Sun Apr 09 20:31:16 2023
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Mon Apr 10 22:22:39 2023
 <BR><P>
 <H3>Maximum Stack Usage =        144 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -516,7 +516,7 @@ Global Symbols
 <P><STRONG><a name="[68]"></a>OLED_DrawPoint</STRONG> (Thumb, 114 bytes, Stack size 20 bytes, oled.o(i.OLED_DrawPoint))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = OLED_DrawPoint
 </UL>
-<BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_ShowChinese
+<BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_ShowPicture
 </UL>
 
 <P><STRONG><a name="[62]"></a>OLED_Init</STRONG> (Thumb, 306 bytes, Stack size 8 bytes, oled.o(i.OLED_Init))
@@ -544,25 +544,24 @@ Global Symbols
 <LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Start
 </UL>
 <BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_Clear
-<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_ScrollDisplay
-<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Oled_task
+<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_ScrollDisplayPicture
 </UL>
 
-<P><STRONG><a name="[66]"></a>OLED_ScrollDisplay</STRONG> (Thumb, 168 bytes, Stack size 8 bytes, oled.o(i.OLED_ScrollDisplay))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = OLED_ScrollDisplay &rArr; OLED_ShowChinese &rArr; OLED_DrawPoint
+<P><STRONG><a name="[66]"></a>OLED_ScrollDisplayPicture</STRONG> (Thumb, 106 bytes, Stack size 16 bytes, oled.o(i.OLED_ScrollDisplayPicture))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = OLED_ScrollDisplayPicture &rArr; OLED_ShowPicture &rArr; OLED_DrawPoint
 </UL>
-<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_ShowChinese
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_ShowPicture
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_Refresh
 </UL>
 <BR>[Called By]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Oled_task
 </UL>
 
-<P><STRONG><a name="[67]"></a>OLED_ShowChinese</STRONG> (Thumb, 244 bytes, Stack size 44 bytes, oled.o(i.OLED_ShowChinese))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = OLED_ShowChinese &rArr; OLED_DrawPoint
+<P><STRONG><a name="[67]"></a>OLED_ShowPicture</STRONG> (Thumb, 214 bytes, Stack size 52 bytes, oled.o(i.OLED_ShowPicture))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = OLED_ShowPicture &rArr; OLED_DrawPoint
 </UL>
 <BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_DrawPoint
 </UL>
-<BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_ScrollDisplay
+<BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_ScrollDisplayPicture
 </UL>
 
 <P><STRONG><a name="[64]"></a>OLED_WR_Byte</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, oled.o(i.OLED_WR_Byte))
@@ -852,11 +851,10 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskCreateExt
 </UL>
 
-<P><STRONG><a name="[4e]"></a>Oled_task</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, main.o(i.Oled_task))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = Oled_task &rArr; OLED_ScrollDisplay &rArr; OLED_ShowChinese &rArr; OLED_DrawPoint
+<P><STRONG><a name="[4e]"></a>Oled_task</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, main.o(i.Oled_task))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = Oled_task &rArr; OLED_ScrollDisplayPicture &rArr; OLED_ShowPicture &rArr; OLED_DrawPoint
 </UL>
-<BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_ScrollDisplay
-<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_Refresh
+<BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_ScrollDisplayPicture
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(i.start_task)
 </UL>
